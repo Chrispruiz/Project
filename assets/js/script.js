@@ -1,4 +1,5 @@
 var cityInputEl = document.querySelector("#searchInput");
+var citySearchEl = document.querySelector("#citySearch");
 var cityName = {};
 
 var formSubmitHandler = function(event) {
@@ -7,6 +8,7 @@ var formSubmitHandler = function(event) {
   
     // get value from input element
     cityName = cityInputEl.value.trim();
+    console.log(cityName);
   
     if (cityName) {
         getWeather(cityName);
@@ -20,7 +22,7 @@ var formSubmitHandler = function(event) {
   };
 
 var getWeather = function(city) {
-    var weatherApiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=e36fb2ce796485b4932661a9398d1827';
+    var weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=e36fb2ce796485b4932661a9398d1827';
 
     // make a get request to url
     fetch(weatherApiUrl)
